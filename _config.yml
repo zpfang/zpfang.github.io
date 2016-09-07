@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: zp.fang
 subtitle:
 description:
-author: John Doe
-language:
+author: zp.fang
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -71,5 +71,5 @@ deploy:
   type: git
   repository: https://github.com/zpfang/zpfang.github.io.git
   branch: master
-  
+
 avatar: /uploads/avatar.jpg
