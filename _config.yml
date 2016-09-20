@@ -73,3 +73,5 @@ deploy:
   branch: master
 
 avatar: /uploads/avatar.jpg
+
+duoshuo_shortname: zpfang
