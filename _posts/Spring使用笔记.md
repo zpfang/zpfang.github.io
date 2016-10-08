@@ -1,0 +1,43 @@
+---
+title: Spring使用笔记
+date: 2016-10-04 08:52:00
+comment: true
+tags: [spring, java web]
+---
+
+<!-- more -->
+------
+## 前言
+初次使用Spring, 记录一些关于Spring使用中遇到的问题
+### Spring配置
+    //spring context配置文件位置指定  
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/springContenxt.xml</param-value>
+    </context-param>
+    //spring context采用listener加载
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+           //采用servlet加载spring mvc的dispatcher,并指定配置文件
+    <servlet>
+       <servlet-name>RESTful</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <init-param>
+           <param-name>contextConfigLocation</param-name>
+           <param-value>/WEB-INF/rest-servlet.xml</param-value>
+       </init-param>
+       <load-on-startup>6</load-on-startup>
+   </servlet>
+
+** spring加载时将加载整个应用的根容器，而spring mvc加载时将加载子容器，子容器能够获取父容器的bean而父容器不能获取子容器的bean **  
+*Spring中的ApplicationContexts可以被限制在不同的作用域。在web框架中，每个DispatcherServlet有它自己的WebApplicationContext，它包含了DispatcherServlet配置所需要的bean。DispatcherServlet 使用的缺省BeanFactory是XmlBeanFactory，并且DispatcherServlet在初始化时会在你的web应用的WEB-INF目录下寻找[servlet-name]-servlet.xml文件。DispatcherServlet使用的缺省值可以使用servlet初始化参数修改，*
+*WebApplicationContext仅仅是一个拥有web应用必要功能的普通ApplicationContext。它和一个标准的ApplicationContext的不同之处在于它能够解析主题，并且它知道和那个servlet关联（通过到ServletContext的连接）。WebApplicationContext被绑定在ServletContext上，当你需要的时候，可以使用RequestContextUtils找到WebApplicationContext。*  
+## 获取ApplicationContext
+** 重新加载型 **  
+    1. XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
+    2. ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"a.xml", "b.xml"});  
+    3.
+** 获取已经加载型 **
+
+ 
