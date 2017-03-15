@@ -2,9 +2,9 @@
 title: JAVA VM工具学习
 date: 2017-03-15 17:17:54
 tags:
-+ description: "在学习和工作中使用的有关JAVA的工具记录"
 ---
-<Contents>
+在学习和工作中使用的有关JAVA的工具记录
++<!-- more -->
 ## JPS
 **显示当前所有Java进程pid的命令**  
 **相关命令**  
