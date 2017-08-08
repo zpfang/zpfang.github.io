@@ -12,11 +12,11 @@ email: zpfang@foxmail.com
 location: Hangzhou
 company: servyou
 company_url: zpfang.cc
-github_url: https://github.com/zpfang # ex. https://github.com/zpfang
-github_username: zpfang# ex. DONGChuan
+github_url: https://github.com/zpfang
+github_username: zpfang
 description: recode the tech road
 favicon: favicon.png # Image must be in assets/images
-repository: zpfang/zpfang.github.io # ex. DONGChuan/DONGChuan.github.io
+repository: zpfang/zpfang.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
