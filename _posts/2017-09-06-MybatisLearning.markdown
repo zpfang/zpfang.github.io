@@ -64,6 +64,7 @@ id和事务和数据源共同组成config中的environment变量
 - 解析databaseIdProvider
 获取当前是什么数据类型,是通过数据源获取MetaData来判断数据库类型的, sql中通过databaseId来针对不同的数据库执行不同的语句
 - 解析typeHandlers
+同typeAliases解析, 如果配置了包,则扫描包下实现了TypeHandler的类, 配置了类则解析JavaType,JdbcType,TypeHandler实现类, 最后注册到config的变量typeHandlerRegistry(默认注册了基本的typeHandler)中  
 - 解析mappers
 	
 ### 2.
