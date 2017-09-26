@@ -104,10 +104,10 @@ gitbook的安装以及自动部署配置过程记录
 - Jenkins安装Gitlab Hook Plugin和Build Authorization Token插件并重启
 
 - 配置项目远程构建, 添加前面生成的token
-	![](jenkens1.png)
+	![Alt Text](jenkens1.png)
 
 - 配置gitlab项目webhook, 加入构建地址http://${Jenkins地址}:${Jenkins端口}/buildByToken/build?job=${Jenkins项目名称}&token=${前面生成并添加到Jenkins远程构建的token}
-	![](gitlab_hook.png)
+	![Alt Text](https://github.com/zpfang/zpfang.github.io/blob/master/_posts/gitlab_hook.png)
 
 参考地址:  
 [http://www.jianshu.com/p/4eac43872b40](http://www.jianshu.com/p/4eac43872b40])
