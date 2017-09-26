@@ -15,6 +15,8 @@ gitbook的安装以及自动部署配置过程记录
     npm install -g gitbook-cli
     //验证并安装
     gitbook -V 
+    //安装目录折叠插件
+    $ npm install -g gitbook-plugin-toggle-chapters
 
 ## 生成gitbook 
 书写SUMMARY.md目录结构
@@ -28,6 +30,13 @@ gitbook的安装以及自动部署配置过程记录
         - [第二节](chapter2/section2.md)
     * [结束](end/README.md)
 
+新增book.json加入目录折叠插件
+
+    {
+        "title" : "消息服务文档",
+        "plugins": ["toggle-chapters"]
+    }
+
 使用gitbook init根据目录结构生成相应的文件  
 使用gitbook build . _book(这里.默认创建后面的文件夹)生成对应的html文件  
 
@@ -36,7 +45,8 @@ gitbook的安装以及自动部署配置过程记录
 访问localhost:4000预览gitbook
 
 ## 创建git项目地址
-创建git项目, 并上传markdown文件
+创建git项目, 并上传markdown文件  
+这里采用一个git项目下存放多个gitbook目录, 后面Jenkins同时部署
 
 ## Jenkins发布
 - 创建Jenkins项目, 并配置git地址, 分支等
@@ -85,3 +95,19 @@ gitbook的安装以及自动部署配置过程记录
     }
 
 ## 配置上传代码自动部署
+
+- 生成随机token(用户匿名构建Jenkins项目)
+ 
+	    openssl rand -hex 12
+	    30910262eff664f2acbcb962
+
+- Jenkins安装Gitlab Hook Plugin和Build Authorization Token插件并重启
+
+- 配置项目远程构建
+	![](jenkens1.png)
+
+- 配置gitlab项目webhook
+	![](gitlab_hook.png)
+
+参考地址:  
+[http://www.jianshu.com/p/4eac43872b40](http://www.jianshu.com/p/4eac43872b40])
