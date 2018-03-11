@@ -3,7 +3,6 @@ layout: post
 title:  "Gitbook安装教程"
 date:   2017-09-06 13:25:35 +0200
 categories: gitbook git markdown
-no-post-nav: true
 ---
 
 gitbook的安装以及自动部署配置过程记录
